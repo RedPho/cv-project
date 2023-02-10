@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Form from "./components/form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameValue: "",
+      emailValue: "",
+      phoneValue: ""
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    let newValue = e.target.value;
+    if (e.target.id == "nameInput") {
+      this.setState({nameValue: newValue});
+    }
+    else if (e.target.id == "emailInput") {
+      this.setState({emailValue: newValue});
+    }
+    else {
+      this.setState({phoneValue: newValue});
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Form values={this.state} handle={this.handleChange}/>
+      </div>
+    );
+  }
 }
 
 export default App;
