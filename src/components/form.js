@@ -21,8 +21,8 @@ class Form extends Component {
         <label>Company Name: <input id="companyInput" onChange={this.props.handle} value={this.props.values.companyValue}/></label>
         <label>Position Title: <input id="positionInput" onChange={this.props.handle} value={this.props.values.positionValue}/></label>
         <label>Main Tasks: <input id="mainTasksInput" onChange={this.props.handle} value={this.props.values.mainTasksValue}/></label>
-        <label>From: <input id="jobFromInput" onChange={this.props.handle} value={this.props.values.jobFromValue}/></label>
-        <label>Until: <input id="jobUntilInput" onChange={this.props.handle} value={this.props.values.jobUntilValue}/></label>
+        <label>From: <input type={"Date"} id="jobFromInput" onChange={this.props.handle} value={this.props.values.jobFromValue}/></label>
+        <label>Until: <input type={"Date"} id="jobUntilInput" onChange={this.props.handle} value={this.props.values.jobUntilValue}/></label>
       </div>
     )
   }
